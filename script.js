@@ -2,19 +2,19 @@
 const cableDatabase = {
     paineis: [
         {
-            tag: "774-04",
+            tag: "TT774-04",
             localizacao: "Sala de Máquinas Principal",
             descricao: "Painel de distribuição principal",
             cabos: [
                 {
-                    tag: "774-04-01",
+                    tag: "TT774-04",
                     origem: "QDG-01",
                     destino: "M-101",
                     secao: "2.5",
                     comprimento: "50"
                 },
                 {
-                    tag: "774-04-02",
+                    tag: "TT774-04",
                     origem: "QDG-01",
                     destino: "M-102",
                     secao: "4",
@@ -23,12 +23,12 @@ const cableDatabase = {
             ]
         },
         {
-            tag: "775-01",
+            tag: "TT774-05",
             localizacao: "Área de Produção",
             descricao: "Painel secundário de produção",
             cabos: [
                 {
-                    tag: "775-01-01",
+                    tag: "TT774-06",
                     origem: "QDP-01",
                     destino: "B-201",
                     secao: "6",
