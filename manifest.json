@@ -1,9 +1,9 @@
 {
   "name": "Eletrica",
-  "theme_color": "#076747",
-  "background_color": "#076747",
+  "theme_color": "#065f4e",
+  "background_color": "#065f4e",
   "short_name": "Eletrica",
-  "description": "Em contrar os cabos dentro dos paineis",
+  "description": "Para ter um controle do cabos dos paineis",
   "categories": [
     "business"
   ]
