@@ -2,8 +2,6 @@
 const cableDatabase = {
     paineis: [
         {
-  "paineis": [
-    {
       "tag": "TT777-01",
       "localizacao": "Painel 01",
       "descricao": "Sensor de temperatura do setor 01",
