@@ -288,7 +288,7 @@ textarea#export-data, textarea#import-data {
     color: #a94442;
 }
 
-/* Responsividade */
+Responsividade
 @media (max-width: 768px) {
     .container {
         padding: 10px;
@@ -375,7 +375,7 @@ textarea#export-data, textarea#import-data {
 
     .painel-info p {
         margin-bottom: 8px;
-        font-size: 14px;
+        font-size: 1.1em;
     }
 }
 
