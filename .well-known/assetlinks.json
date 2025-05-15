@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "app.netlify.industriaeletrica.twa",
+        "sha256_cert_fingerprints": ["81:E8:B9:DF:EE:15:14:D5:EA:10:EE:FB:31:2A:B8:17:1D:09:D7:44:70:CE:C7:DC:3B:72:1B:15:5B:B0:E4:82"]
+      }
+    }]
