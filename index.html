@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controle de Cabos</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="manifest.json">
+    <link rel="manifest" href="manifest.json">
+    <script>
+        if (typeof navigator.serviceWorker !== 'undefined') {
+            navigator.serviceWorker.register('pwabuilder-sw.js')
+        }
+    </script>
 </head>
+
 <body>
     <div class="container">
         <h1>Controle de Cabos</h1>
-        
+
         <div class="tabs">
             <button class="tab-button active" data-tab="pesquisa">Pesquisar</button>
             <button class="tab-button" data-tab="cadastro">Cadastrar</button>
             <button class="tab-button" data-tab="exportar">Exportar/Importar</button>
         </div>
-        
+
         <div id="pesquisa" class="tab-content active">
             <div class="search-container">
                 <input type="text" id="tag-input" placeholder="Digite a TAG (ex: 774-04)">
                 <button id="search-btn">Pesquisar</button>
             </div>
-            
+
             <div id="results" class="results-container">
                 <div class="painel-info">
                     <h3>Informações do Painel</h3>
@@ -30,7 +37,7 @@
                     <p><strong>Localização:</strong> <span id="painel-local">-</span></p>
                     <p><strong>Descrição:</strong> <span id="painel-desc">-</span></p>
                 </div>
-                
+
                 <div class="cabos-container">
                     <h3>Cabos no Painel</h3>
                     <table id="cabos-table">
@@ -50,45 +57,45 @@
                 </div>
             </div>
         </div>
-        
+
         <div id="cadastro" class="tab-content">
             <form id="cadastro-form">
                 <h2>Cadastro de Painel e Cabos</h2>
-                
+
                 <div class="form-group">
                     <label for="cad-tag">TAG do Painel:</label>
                     <input type="text" id="cad-tag" required placeholder="Ex: 774-04">
                 </div>
-                
+
                 <div class="form-group">
                     <label for="cad-local">Localização:</label>
                     <input type="text" id="cad-local" required placeholder="Ex: Área de Máquinas">
                 </div>
-                
+
                 <div class="form-group">
                     <label for="cad-desc">Descrição:</label>
                     <textarea id="cad-desc" placeholder="Descrição detalhada do painel"></textarea>
                 </div>
-                
+
                 <h3>Cabos no Painel</h3>
                 <div id="cabos-cadastro">
                     <!-- Cabos serão adicionados dinamicamente -->
                 </div>
-                
+
                 <button type="button" id="add-cabo-btn">Adicionar Cabo</button>
                 <button type="submit">Salvar Cadastro</button>
             </form>
         </div>
-        
+
         <div id="exportar" class="tab-content">
             <h2>Exportar/Importar Dados</h2>
-            
+
             <div class="export-section">
                 <h3>Exportar Dados</h3>
                 <button id="export-btn">Exportar para JSON</button>
                 <textarea id="export-data" readonly></textarea>
             </div>
-            
+
             <div class="import-section">
                 <h3>Importar Dados</h3>
                 <textarea id="import-data" placeholder="Cole os dados JSON aqui"></textarea>
@@ -99,4 +106,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
