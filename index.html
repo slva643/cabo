@@ -7,17 +7,18 @@
     <title>Controle de Cabos</title>
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('pwabuilder-sw.js').then(reg => {
-                    console.log('Service worker registrado com sucesso.', reg);
-                }).catch(err => {
-                    console.error('Falha ao registrar service worker:', err);
-                });
-            });
-        }
-    </script>
+   <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('pwabuilder-sw.js').then(reg => {
+        console.log('Service Worker registrado!', reg);
+      }).catch(err => {
+        console.error('Erro ao registrar o Service Worker:', err);
+      });
+    });
+  }
+</script>
+
 
 </head>
 
