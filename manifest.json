@@ -1,0 +1,10 @@
+{
+  "name": "Eletrica",
+  "theme_color": "#076747",
+  "background_color": "#076747",
+  "short_name": "Eletrica",
+  "description": "Em contrar os cabos dentro dos paineis",
+  "categories": [
+    "business"
+  ]
+}
