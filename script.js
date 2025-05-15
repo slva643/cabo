@@ -2,148 +2,41 @@
 const cableDatabase = {
     paineis: [
         {
-  "paineis": [
-    {
-      "tag": "TT777-01",
-      "localizacao": "Painel 01",
-      "descricao": "Sensor de temperatura do setor 01",
-      "cabos": [
+            tag: "774-04",
+            localizacao: "Sala de Máquinas Principal",
+            descricao: "Painel de distribuição principal",
+            cabos: [
+                {
+                    tag: "774-04-01",
+                    origem: "QDG-01",
+                    destino: "M-101",
+                    secao: "2.5",
+                    comprimento: "50"
+                },
+                {
+                    tag: "774-04-02",
+                    origem: "QDG-01",
+                    destino: "M-102",
+                    secao: "4",
+                    comprimento: "45"
+                }
+            ]
+        },
         {
-          "tag": "TT777-01",
-          "origem": "Bon\u00e9 XXX",
-          "destino": "Bon\u00e9 YYY",
-          "secao": "1.25",
-          "comprimento": "3.70"
+            tag: "775-01",
+            localizacao: "Área de Produção",
+            descricao: "Painel secundário de produção",
+            cabos: [
+                {
+                    tag: "775-01-01",
+                    origem: "QDP-01",
+                    destino: "B-201",
+                    secao: "6",
+                    comprimento: "30"
+                }
+            ]
         }
-      ]
-    },
-    {
-      "tag": "TT777-02",
-      "localizacao": "Painel 01",
-      "descricao": "Sensor de temperatura do setor 02",
-      "cabos": [
-        {
-          "tag": "TT777-02",
-          "origem": "Bon\u00e9 XXX",
-          "destino": "Bon\u00e9 YYY",
-          "secao": "1.75",
-          "comprimento": "7.40"
-        }
-      ]
-    },
-    {
-      "tag": "TT777-03",
-      "localizacao": "Painel 01",
-      "descricao": "Sensor de temperatura do setor 03",
-      "cabos": [
-        {
-          "tag": "TT777-03",
-          "origem": "Bon\u00e9 XXX",
-          "destino": "Bon\u00e9 YYY",
-          "secao": "2.25",
-          "comprimento": "11.10"
-        }
-      ]
-    },
-    {
-      "tag": "TT777-04",
-      "localizacao": "Painel 01",
-      "descricao": "Sensor de temperatura do setor 04",
-      "cabos": [
-        {
-          "tag": "TT777-04",
-          "origem": "Bon\u00e9 XXX",
-          "destino": "Bon\u00e9 YYY",
-          "secao": "2.75",
-          "comprimento": "14.80"
-        }
-      ]
-    },
-    {
-      "tag": "TT777-05",
-      "localizacao": "Painel 01",
-      "descricao": "Sensor de temperatura do setor 05",
-      "cabos": [
-        {
-          "tag": "TT777-05",
-          "origem": "Bon\u00e9 XXX",
-          "destino": "Bon\u00e9 YYY",
-          "secao": "3.25",
-          "comprimento": "18.50"
-        }
-      ]
-    },
-    {
-      "tag": "TT777-06",
-      "localizacao": "Painel 01",
-      "descricao": "Sensor de temperatura do setor 06",
-      "cabos": [
-        {
-          "tag": "TT777-06",
-          "origem": "Bon\u00e9 XXX",
-          "destino": "Bon\u00e9 YYY",
-          "secao": "3.75",
-          "comprimento": "22.20"
-        }
-      ]
-    },
-    {
-      "tag": "TT777-07",
-      "localizacao": "Painel 01",
-      "descricao": "Sensor de temperatura do setor 07",
-      "cabos": [
-        {
-          "tag": "TT777-07",
-          "origem": "Bon\u00e9 XXX",
-          "destino": "Bon\u00e9 YYY",
-          "secao": "4.25",
-          "comprimento": "25.90"
-        }
-      ]
-    },
-    {
-      "tag": "TT777-08",
-      "localizacao": "Painel 01",
-      "descricao": "Sensor de temperatura do setor 08",
-      "cabos": [
-        {
-          "tag": "TT777-08",
-          "origem": "Bon\u00e9 XXX",
-          "destino": "Bon\u00e9 YYY",
-          "secao": "4.75",
-          "comprimento": "29.60"
-        }
-      ]
-    },
-    {
-      "tag": "TT777-09",
-      "localizacao": "Painel 01",
-      "descricao": "Sensor de temperatura do setor 09",
-      "cabos": [
-        {
-          "tag": "TT777-09",
-          "origem": "Bon\u00e9 XXX",
-          "destino": "Bon\u00e9 YYY",
-          "secao": "5.25",
-          "comprimento": "33.30"
-        }
-      ]
-    },
-    {
-      "tag": "TT777-10",
-      "localizacao": "Painel 01",
-      "descricao": "Sensor de temperatura do setor 10",
-      "cabos": [
-        {
-          "tag": "TT777-10",
-          "origem": "Bon\u00e9 XXX",
-          "destino": "Bon\u00e9 YYY",
-          "secao": "5.75",
-          "comprimento": "37.00"
-        }
-      ]
-    }
-  ]
+    ]
 };
 
 // Função para salvar os dados (simulada, pois agora os dados estão no código)
