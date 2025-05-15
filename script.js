@@ -140,8 +140,6 @@ const cableDatabase = {
           "comprimento": "37.00"
         }
       ]
-    }
-  ]
 };
 
 // Função para salvar os dados (simulada, pois agora os dados estão no código)
