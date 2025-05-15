@@ -19,7 +19,9 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     color: #333;
     margin-bottom: 15px;
 }
@@ -113,7 +115,8 @@ table {
     margin-top: 10px;
 }
 
-th, td {
+th,
+td {
     padding: 12px;
     text-align: left;
     border-bottom: 1px solid #ddd;
@@ -138,7 +141,9 @@ tr:hover {
     font-weight: bold;
 }
 
-.form-group input, .form-group textarea, .form-group select {
+.form-group input,
+.form-group textarea,
+.form-group select {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
@@ -154,7 +159,10 @@ tr:hover {
     resize: vertical;
 }
 
-button[type="submit"], #export-btn, #import-btn, #import-excel-btn {
+button[type="submit"],
+#export-btn,
+#import-btn,
+#import-excel-btn {
     background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
@@ -166,7 +174,10 @@ button[type="submit"], #export-btn, #import-btn, #import-excel-btn {
     width: 100%;
 }
 
-button[type="submit"]:hover, #export-btn:hover, #import-btn:hover, #import-excel-btn:hover {
+button[type="submit"]:hover,
+#export-btn:hover,
+#import-btn:hover,
+#import-excel-btn:hover {
     background-color: #45a049;
 }
 
@@ -211,7 +222,8 @@ button[type="submit"]:hover, #export-btn:hover, #import-btn:hover, #import-excel
     background-color: #d32f2f;
 }
 
-textarea#export-data, textarea#import-data {
+textarea#export-data,
+textarea#import-data {
     width: 100%;
     min-height: 200px;
     padding: 10px;
@@ -221,7 +233,8 @@ textarea#export-data, textarea#import-data {
     margin-bottom: 10px;
 }
 
-.export-section, .import-section {
+.export-section,
+.import-section {
     margin-bottom: 30px;
 }
 
@@ -250,7 +263,8 @@ textarea#export-data, textarea#import-data {
     border-collapse: collapse;
 }
 
-.preview-table th, .preview-table td {
+.preview-table th,
+.preview-table td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
@@ -288,7 +302,6 @@ textarea#export-data, textarea#import-data {
     color: #a94442;
 }
 
-Responsividade
 @media (max-width: 768px) {
     .container {
         padding: 10px;
@@ -325,12 +338,13 @@ Responsividade
         font-size: 14px;
     }
 
-    th, td {
+    th,
+    td {
         padding: 8px 5px;
     }
 
-    .form-group input, 
-    .form-group textarea, 
+    .form-group input,
+    .form-group textarea,
     .form-group select {
         font-size: 14px;
         padding: 8px;
@@ -387,6 +401,7 @@ button:active {
 }
 
 /* Remove highlight em links e botões no iOS */
-a, button {
+a,
+button {
     -webkit-tap-highlight-color: transparent;
 }
