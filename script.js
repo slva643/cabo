@@ -1,9 +1,52 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Inicializa o banco de dados
-    let database = JSON.parse(localStorage.getItem('cableDatabase')) || {
-        paineis: []
-    };
+// Banco de dados embutido no código
+const cableDatabase = {
+    paineis: [
+        {
+            tag: "774-04",
+            localizacao: "Sala de Máquinas Principal",
+            descricao: "Painel de distribuição principal",
+            cabos: [
+                {
+                    tag: "774-04-01",
+                    origem: "QDG-01",
+                    destino: "M-101",
+                    secao: "2.5",
+                    comprimento: "50"
+                },
+                {
+                    tag: "774-04-02",
+                    origem: "QDG-01",
+                    destino: "M-102",
+                    secao: "4",
+                    comprimento: "45"
+                }
+            ]
+        },
+        {
+            tag: "775-01",
+            localizacao: "Área de Produção",
+            descricao: "Painel secundário de produção",
+            cabos: [
+                {
+                    tag: "775-01-01",
+                    origem: "QDP-01",
+                    destino: "B-201",
+                    secao: "6",
+                    comprimento: "30"
+                }
+            ]
+        }
+    ]
+};
 
+// Função para salvar os dados (simulada, pois agora os dados estão no código)
+function saveDatabase() {
+    // Em um sistema real, você poderia gerar um novo arquivo JS com os dados atualizados
+    console.log("Dados atualizados (em um sistema real, gere um novo arquivo JS com estes dados):");
+    console.log(JSON.stringify(cableDatabase, null, 2));
+}
+
+document.addEventListener('DOMContentLoaded', function() {
     // Elementos da interface
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabContents = document.querySelectorAll('.tab-content');
@@ -18,27 +61,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const importBtn = document.getElementById('import-btn');
     const importData = document.getElementById('import-data');
 
-    // Controle de abas
+    // Controle de abas (mesmo código anterior)
     tabButtons.forEach(button => {
         button.addEventListener('click', () => {
             const tabId = button.getAttribute('data-tab');
-            
-            // Remove classe active de todos os botões e conteúdos
             tabButtons.forEach(btn => btn.classList.remove('active'));
             tabContents.forEach(content => content.classList.remove('active'));
-            
-            // Adiciona classe active ao botão e conteúdo selecionado
             button.classList.add('active');
             document.getElementById(tabId).classList.add('active');
         });
     });
 
-    // Pesquisa por TAG
+    // Pesquisa por TAG (mesmo código anterior, mas usando cableDatabase direto)
     searchBtn.addEventListener('click', pesquisarPorTag);
     tagInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            pesquisarPorTag();
-        }
+        if (e.key === 'Enter') pesquisarPorTag();
     });
 
     function pesquisarPorTag() {
@@ -48,15 +85,13 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        const painel = database.paineis.find(p => p.tag === tag);
+        const painel = cableDatabase.paineis.find(p => p.tag === tag);
         
         if (painel) {
-            // Exibe informações do painel
             document.getElementById('painel-tag').textContent = painel.tag;
             document.getElementById('painel-local').textContent = painel.localizacao;
             document.getElementById('painel-desc').textContent = painel.descricao || '-';
             
-            // Preenche tabela de cabos
             const tbody = document.querySelector('#cabos-table tbody');
             tbody.innerHTML = '';
             
@@ -85,9 +120,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Adicionar campo de cabo no cadastro
+    // Adicionar campo de cabo no cadastro (mesmo código anterior)
     addCaboBtn.addEventListener('click', function() {
-        const caboId = Date.now(); // ID único para o cabo
+        const caboId = Date.now();
         const caboDiv = document.createElement('div');
         caboDiv.className = 'cabo-item';
         caboDiv.innerHTML = `
@@ -115,13 +150,12 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         cabosCadastro.appendChild(caboDiv);
         
-        // Adiciona evento para remover o cabo
         caboDiv.querySelector('.remove-cabo').addEventListener('click', function() {
             cabosCadastro.removeChild(caboDiv);
         });
     });
 
-    // Cadastro de novo painel e cabos
+    // Cadastro de novo painel e cabos (modificado para trabalhar com cableDatabase)
     cadastroForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
@@ -134,7 +168,6 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // Coleta dados dos cabos
         const cabos = [];
         const caboItems = cabosCadastro.querySelectorAll('.cabo-item');
         
@@ -157,12 +190,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Verifica se já existe um painel com essa TAG
-        const painelIndex = database.paineis.findIndex(p => p.tag === tag);
+        const painelIndex = cableDatabase.paineis.findIndex(p => p.tag === tag);
         
         if (painelIndex >= 0) {
             // Atualiza painel existente
-            database.paineis[painelIndex] = {
+            cableDatabase.paineis[painelIndex] = {
                 tag,
                 localizacao,
                 descricao,
@@ -170,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
             };
         } else {
             // Adiciona novo painel
-            database.paineis.push({
+            cableDatabase.paineis.push({
                 tag,
                 localizacao,
                 descricao,
@@ -178,33 +210,37 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
         
-        // Salva no localStorage
-        localStorage.setItem('cableDatabase', JSON.stringify(database));
+        // Chama a função para "salvar" (na prática, você precisaria gerar um novo arquivo)
+        saveDatabase();
         
         // Limpa o formulário
         cadastroForm.reset();
         cabosCadastro.innerHTML = '';
         
         // Exibe mensagem de sucesso
-        alert('Painel e cabos cadastrados com sucesso!');
+        alert('Painel e cabos cadastrados com sucesso!\n\nObservação: Para persistir as alterações permanentemente, você precisa atualizar o arquivo script.js com os novos dados.');
         
         // Volta para a aba de pesquisa
         document.querySelector('.tab-button[data-tab="pesquisa"]').click();
     });
 
-    // Exportar dados
+    // Exportar dados (mostra o JSON completo)
     exportBtn.addEventListener('click', function() {
-        exportData.value = JSON.stringify(database, null, 2);
+        exportData.value = JSON.stringify(cableDatabase, null, 2);
     });
 
-    // Importar dados
+    // Importar dados (modificado para trabalhar com cableDatabase)
     importBtn.addEventListener('click', function() {
         try {
             const importedData = JSON.parse(importData.value);
             if (importedData && importedData.paineis) {
-                database = importedData;
-                localStorage.setItem('cableDatabase', JSON.stringify(database));
-                alert('Dados importados com sucesso!');
+                // Substitui os dados atuais
+                cableDatabase.paineis = importedData.paineis;
+                
+                alert('Dados importados com sucesso!\n\nObservação: Para persistir as alterações permanentemente, você precisa atualizar o arquivo script.js com estes dados.');
+                
+                // Atualiza a exportação para mostrar os novos dados
+                exportData.value = JSON.stringify(cableDatabase, null, 2);
             } else {
                 alert('Formato de dados inválido.');
             }
